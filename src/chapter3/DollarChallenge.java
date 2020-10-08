@@ -10,6 +10,7 @@ public class DollarChallenge {
         double dimeWorth = .10;
         double quarterWorth = .25;
         int dollarWorth = 1;
+        String resultMessage = "";
 
         // We ready our scanner to get user inputs
         Scanner scanner = new Scanner(System.in);
@@ -26,11 +27,27 @@ public class DollarChallenge {
 
         System.out.println("Enter your number of quarters: ");
         int userQuarters = scanner.nextInt();
+        scanner.close();
 
 
         // Now we need to do the calculations and see how much under or above the user was from a dollar, or if it was
         // just a dollar.
 
+        double total = (penniesWorth * userPennies) + (nickelWorth * userNickels) + (dimeWorth * userDimes) +
+                (quarterWorth * userQuarters);
+
+        if (total == dollarWorth){
+            resultMessage = "Congratulations you have exactly a dollar!";
+        }
+        else if (total < dollarWorth) {
+            resultMessage = "You are short by: " + (dollarWorth - total);
+        }
+        else if (total > dollarWorth){
+            resultMessage = "Ups, you are past a dollar by " + (total - dollarWorth);
+        }
+
+        // we print out the result
+        System.out.println(resultMessage);
 
     }
 }
