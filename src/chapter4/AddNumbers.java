@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class AddNumbers {
     public static void main(String arg[]){
         //
-        boolean again = false;
+        boolean again;
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Enter the first number:");
