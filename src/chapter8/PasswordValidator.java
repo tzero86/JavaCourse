@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class PasswordValidator {
     private static final Scanner scanner = new Scanner(System.in);
+    private static final int PASSWORD_LENGTH = 8;
     public static void main(String[] arg){
         String username = getUsername();
         String oldPassword = getUserOldPassword();
@@ -28,7 +29,7 @@ public class PasswordValidator {
     }
 
     public static boolean isPasswordLengthOk(String password){
-        return password.length() >= 8;
+        return password.length() >= PASSWORD_LENGTH;
     }
 
     public static boolean isUsernameInPassword(String username, String password){
